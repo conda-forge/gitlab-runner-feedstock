@@ -1,5 +1,5 @@
 {% set import_path = "gitlab.com/gitlab-org/gitlab-runner" %}
-{% set version = "12.1.0" %}
+{% set version = "12.3.0" %}
 {% set branch = '-'.join(version.split('.')[:2] +['stable']) %}
 {% set built = datetime.datetime.now().isoformat() %}
 
@@ -7,13 +7,13 @@
 {% set pkg_src = ('src/'+import_path).replace("/", os.sep) %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   - folder: {{ pkg_src }}
     url: https://{{ import_path }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.bz2
-    sha256: 49e7993e1eabc362ec99562e84931e699b77948efb6669f3e98a5dc40f2b2b66
+    sha256: 039787e67c147acdbea56d34d5bc5aecd17c14ee7116ae1504ce3abf4c15aa02
 
 build:
   number: 0
@@ -31,13 +31,13 @@ test:
     - gitlab-runner --version
 
 about:
-  summary: "The official GitLab CI runner written in Go"
-  license: "MIT"
+  summary: The official GitLab CI runner written in Go
+  license: MIT
   license_family: MIT
   license_file: {{ pkg_src }}/LICENSE
-  home: "https://gitlab.com/gitlab-org/gitlab-runner"
-  dev_url: "https://gitlab.com/gitlab-org/gitlab-runner"
-  doc_url: "https://docs.gitlab.com/runner/"
+  home: https://gitlab.com/gitlab-org/gitlab-runner
+  dev_url: https://gitlab.com/gitlab-org/gitlab-runner
+  doc_url: https://docs.gitlab.com/runner/
 
 extra:
   recipe-maintainers:
