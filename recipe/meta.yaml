@@ -16,7 +16,7 @@ source:
     sha256: 8407b6e3fe393291873c908a222a0909784b1004f4814289fe1b1ffa6122e32f
 
 build:
-  number: 0
+  number: 1
   script:
     - pushd {{ pkg_src }}
     {% set flags = dict(VERSION=version, REVISION="%PKG_BUILDNUM%" if win else "$PKG_BUILDNUM", BRANCH=branch, BUILT=built) %}
