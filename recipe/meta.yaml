@@ -1,5 +1,5 @@
 {% set import_path = "gitlab.com/gitlab-org/gitlab-runner" %}
-{% set version = "13.3.1" %}
+{% set version = "15.4.0" %}
 {% set branch = '-'.join(version.split('.')[:2] +['stable']) %}
 {% set built = datetime.datetime.now().isoformat() %}
 
@@ -13,7 +13,7 @@ package:
 source:
   - folder: {{ pkg_src }}
     url: https://{{ import_path }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.bz2
-    sha256: 8407b6e3fe393291873c908a222a0909784b1004f4814289fe1b1ffa6122e32f
+    sha256: 0b85be93680da66e773d0cf17835389853a400fe5887b35ecb88131e9699c3aa
 
 build:
   number: 0
